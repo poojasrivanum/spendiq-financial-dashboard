@@ -1,0 +1,83 @@
+<!doctype html>
+<title>SpendIQ-Smart Financial Insights Dashboard</title>
+<header class="app-header">
+  <h1>SpendIQ</h1>
+  <p class="tagline">Your Intelligent Financial Statement Analyzer</p>
+</header>
+
+
+<link rel="stylesheet" href="style.css">
+
+
+<section class="card controls">
+<input id="file" type="file" accept=".pdf,.csv,.txt" />
+<div class="btn-row">
+<button id="parse">Parse</button>
+<button id="example">Load Example</button>
+</div>
+<div id="status" class="muted">Ready</div>
+</section>
+
+
+<section class="grid">
+<div>
+<div class="card">
+<h3>Totals</h3>
+<div class="stats">
+<div>Credits: <span id="credits">₹0</span></div>
+<div>Debits: <span id="debits">₹0</span></div>
+<div>Net: <span id="net">₹0</span></div>
+</div>
+</div>
+
+
+<div class="card">
+<h3>Smart Insight</h3>
+<div id="insight" class="muted">No data yet.</div>
+</div>
+
+
+<div class="card">
+  <h3>Transactions</h3>
+  <div class="table-container">
+    <table id="txTable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Type</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+
+
+<aside>
+<div class="card">
+<h3>Top Categories</h3>
+<div id="catlist" class="muted">—</div>
+</div>
+
+
+<div class="card">
+<h3>Spending (pie)</h3>
+<svg id="pie" width="300" height="300" viewBox="0 0 340 340"></svg>
+</div>
+
+
+<div class="muted small">Notes: This version uses PDF.js for selectable PDFs. For scanned PDFs add OCR (Tesseract.js) later.</div>
+</aside>
+</section>
+</main>
+
+
+<!-- PDF.js CDN (worker set in app.js) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.9.179/pdf.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+
+/* ===============================
+   FinSight v3 — Full Clean CSS
+   Dark UI + Scrollable Table Fix
+   =============================== */
+
+:root {
+  --bg: #0f1724;
+  --card: #071428;
+  --accent: #60a5fa;
+  --muted: #94a3b8;
+  --good: #06d6a4;
+  --bad: #ef476f;
+}
+
+/* ---------- Base Styles ---------- */
+* {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, Arial, sans-serif;
+}
+
+html, body {
+  height: auto;
+  overflow-y: auto;
+  background: linear-gradient(180deg, var(--bg), #071027);
+  color: #e6eef8;
+  margin: 0;
+}
+
+/* ---------- Layout Containers ---------- */
+.container {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 18px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ---------- Cards & Buttons ---------- */
+.card {
+  background: var(--card);
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  background: var(--accent);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #04203a;
+  font-weight: 600;
+  transition: background 0.2s ease-in-out;
+}
+
+button:hover {
+  background: #7db8ff;
+}
+/* Access portal */
+.portal {
+  text-align: center;
+  margin-top: 15%;
+}
+
+.role-buttons button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #00ffc8;
+  color: #000;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.role-buttons button:hover {
+  transform: scale(1.05);
+}
+
+
+/* ---------- Grid Layout ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 12px;
+}
+
+.stats {
+  display: flex;
+  gap: 12px;
+  font-weight: 600;
+}
+
+/* ---------- Tables ---------- */
+.table-container {
+  max-height: 420px;              /* scrollable height */
+  overflow-y: auto;               /* enable internal scroll */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: var(--card);
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+  scroll-behavior: smooth;
+}
+
+#txTable {
+  width: 100%;
+  border-collapse: collapse;
+  color: #dbeafe;
+}
+
+#txTable th,
+#txTable td {
+  padding: 8px;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+
+#txTable thead th {
+  position: sticky;
+  top: 0;
+  background: var(--card);
+  z-index: 2;
+  font-weight: 600;
+}
+
+#txTable tbody tr:hover {
+  background-color: rgba(96, 165, 250, 0.1);
+}
+
+/* ---------- Sidebar ---------- */
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ---------- Text Utility ---------- */
+.small {
+  font-size: 12px;
+}
+
+/* ---------- Pie Chart ---------- */
+svg#pie {
+  width: 340px;
+  height: 340px;
+  background: var(--card);
+  border-radius: 8px;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 920px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .table-container {
+    max-height: 300px;
+  }
+
+  svg#pie {
+    width: 100%;
+    height: auto;
+  }
+}
